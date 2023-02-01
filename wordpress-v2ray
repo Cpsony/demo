@@ -2,7 +2,9 @@
 
 #使用方法 
 #wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.com/jth445600/hello-world/master/wordpress-v2ray" && chmod +x install.sh && bash install.sh
-
+#还需要修改v2ray环境变量 https://github.com/v2fly/v2ray-core/discussions/1514
+#vim /etc/systemd/system/v2ray.service 在[Service]项最后增加这一行：EnvironmentFile=/etc/v2ray/v2_env 在v2_env文件上写上以下内容：V2RAY_VMESS_AEAD_FORCED=false
+#systemctl restart v2ray 即可
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
